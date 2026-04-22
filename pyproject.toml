@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cmemory"
+version = "0.1.0"
+description = "Memory framework comparison framework for Mem0, Zep, Letta"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic>=2.0",
+    "openai>=1.0",
+    "tiktoken",
+    "mem0ai>=0.1.0",
+    "httpx>=0.25.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+zep = ["zep-python"]
+letta = ["letta"]
+dev = ["pytest>=7.0", "pytest-asyncio"]
+
+[tool.setuptools.packages.find]
+include = ["cmemory*"]
